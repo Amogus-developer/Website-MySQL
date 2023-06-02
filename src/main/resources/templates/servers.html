@@ -10,11 +10,12 @@
 </head>
 <body>
 <header th:insert="blocks/header :: header"></header>
-<div class="container mt-5">
+<div class="container mt-5"><br>
   <div th:each="data : ${dates}" class="alert alert-info mt-2">
     <h3 th:text="${data.title}"/>
-    <a th:href="'steam://connect/'+${data.address}">connect</a>
     <p th:text="${data.description}"/>
+    <a th:href="'steam://connect/'+${data.address}+':'+${data.port}" class="btn btn-secondary">connect</a>
+    <a th:href="'/servers/'+${data.id}" class="btn btn-secondary">info</a>
   </div>
 </div>
 </body>

@@ -8,7 +8,9 @@ import jakarta.persistence.Id
 @Entity
 class Data(private var title: String = "",
            private var description: String = "",
-           private var address: String = "") {
+           private var address: String = "",
+           private var port: String = "",
+           private var players: String = "") {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private var id: Long = 0
@@ -22,6 +24,11 @@ class Data(private var title: String = "",
     fun getAddress(): String {return address}
     fun setAddress(address: String) {this.address = address}
 
+    fun getPort(): String {return port}
+    fun setPort(port: String) {this.port = port}
+
     fun getDescription(): String {return description}
     fun setDescription(description: String) {this.description = description}
+    fun getPlayers(): String {return players}
+    fun setPlayers(players: String) {this.players = players}
 }
