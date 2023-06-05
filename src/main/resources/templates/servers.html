@@ -9,13 +9,14 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-<header th:insert="blocks/header :: header"></header>
+<header th:insert="~{blocks/header :: header}"></header>
 <div class="container mt-5"><br>
-  <div th:each="data : ${dates}" class="alert alert-info mt-2">
-    <h3 th:text="${data.title}"/>
-    <p th:text="${data.description}"/>
-    <a th:href="'steam://connect/'+${data.address}+':'+${data.port}" class="btn btn-secondary">connect</a>
-    <a th:href="'/servers/'+${data.id}" class="btn btn-secondary">info</a>
+  <div th:each="server : ${servers}" class="alert alert-info mt-2">
+    <h3 th:text="${server.serverName}"/>
+    <p th:text="${server.game}"/>
+    <p th:text="${server.mapName}"/>
+    <p th:text="${server.playerCount}"/>
+    <a th:href="'steam://connect/'+${server.address}+':'+${server.port}" class="btn btn-secondary">connect</a>
   </div>
 </div>
 </body>
